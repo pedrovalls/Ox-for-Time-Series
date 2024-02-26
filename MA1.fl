@@ -1,0 +1,10 @@
+// Batch code for Arfima( 1)
+module("PcGive");
+package("ARFIMA");
+usedata("yma1.csv");
+system
+{
+    Y = yma1;
+}
+ARMA(0,1);
+estimate("EML", 1, 1, 1000, 1);
