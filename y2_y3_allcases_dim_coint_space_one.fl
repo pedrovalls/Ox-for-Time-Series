@@ -1,0 +1,118 @@
+// Batch code for CATS(1) case 1 
+// dimension of cointegration space with 2 lags
+module("CATS");
+package("CATS_UI");
+usedata("y_tri_2casoNew2.csv");
+system
+{
+    Y = V2, V3;
+}
+Lags(2);
+I1Rank(1);
+Trend("NONE");
+estimate("RRR", 3, 1, 201, 1);
+
+
+// Batch code for CATS(2) case 1 
+// dimension of cointegration space with 1 lags
+module("CATS");
+package("CATS_UI");
+usedata("y_tri_2casoNew2.csv");
+system
+{
+    Y = V2, V3;
+}
+Lags(1);
+I1Rank(1);
+Trend("NONE");
+estimate("RRR", 3, 1, 201, 1);
+
+
+// Batch code for CATS(3) case 2 
+// dimension of cointegration space with 2 lags
+module("CATS");
+package("CATS_UI");
+usedata("y_tri_2casoNew2.csv");
+system
+{
+    Y = V2, V3;
+}
+Lags(2);
+I1Rank(1);
+Trend("CIMEAN");
+estimate("RRR", 3, 1, 201, 1);
+
+
+// Batch code for CATS(4) case 2 
+// dimension of cointegration space with 1 lags
+module("CATS");
+package("CATS_UI");
+usedata("y_tri_2casoNew2.csv");
+system
+{
+    Y = V2, V3;
+}
+Lags(1);
+I1Rank(1);
+Trend("CIMEAN");
+estimate("RRR", 3, 1, 201, 1);
+
+// Batch code for CATS(5) case 3 
+// dimension of cointegration space with 2 lags
+module("CATS");
+package("CATS_UI");
+usedata("y_tri_2casoNew2.csv");
+system
+{
+    Y = V2, V3;
+}
+Lags(2);
+I1Rank(1);
+Trend("DRIFT");
+estimate("RRR", 3, 1, 201, 1);
+
+
+// Batch code for CATS(6) case 2 
+// dimension of cointegration space with 1 lags
+module("CATS");
+package("CATS_UI");
+usedata("y_tri_2casoNew2.csv");
+system
+{
+    Y = V2, V3;
+}
+Lags(1);
+I1Rank(1);
+Trend("DRIFT");
+estimate("RRR", 3, 1, 201, 1);
+
+// Batch code for CATS(7) case 4 
+// dimension of cointegration space with 2 lags
+module("CATS");
+package("CATS_UI");
+usedata("y_tri_2casoNew2.csv");
+system
+{
+    Y = V2, V3;
+}
+Lags(2);
+I1Rank(1);
+Trend();
+estimate("RRR", 3, 1, 201, 1);
+
+
+// Batch code for CATS(8) case 2 
+// dimension of cointegration space with 1 lags
+module("CATS");
+package("CATS_UI");
+usedata("y_tri_2casoNew2.csv");
+system
+{
+    Y = V2, V3;
+}
+Lags(1);
+I1Rank(1);
+Trend("");
+estimate("RRR", 3, 1, 201, 1);
+
+
