@@ -1,0 +1,53 @@
+// Batch code for CATS( 4)
+module("CATS");
+package("CATS_UI");
+usedata("sp500.xlsx");
+algebra{
+LFUT=log(FUT);
+LSPOT=log(SPOT);
+}
+
+// CATS(1) No determinsitic components 
+system
+{
+    Y = LFUT, LSPOT;
+}
+Lags(20);
+I1Rank(1);
+Trend("NONE");
+estimate("RRR", 21, 1, 7061, 1);
+progress;
+// CATS(2) restricted constant 
+system
+{
+    Y = LFUT, LSPOT;
+}
+Lags(20);
+I1Rank(1);
+Trend("CIMEAN");
+estimate("RRR", 21, 1, 7061, 1);
+progress;
+
+
+// CATS(3) unrestricted constant 
+system
+{
+    Y = LFUT, LSPOT;
+}
+Lags(20);
+I1Rank(1);
+Trend("DRIFT");
+estimate("RRR", 21, 1, 7061, 1);
+progress;
+
+// CATS(4) restricted linear trend (without constant)
+system
+{
+    Y = LFUT, LSPOT;
+}
+Lags(20);
+I1Rank(1);
+Trend("CIDRIFT");
+estimate("RRR", 21, 1, 7061, 1);
+
+progress;
