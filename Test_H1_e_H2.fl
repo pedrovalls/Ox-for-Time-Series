@@ -1,0 +1,14 @@
+// Batch code:
+// Batch code for CATS( 7)
+module("CATS");
+package("CATS_UI");
+usedata("sp500.xlsx");
+system
+{
+    Y = LFUT, LSPOT;
+}
+Lags(20);
+I1Rank(1);
+Trend("CIMEAN");
+estimate("RRR", 21, 1, 7061, 1);
+Restrict{"[beta]","-1 1 *","[alpha]","0 *"}
